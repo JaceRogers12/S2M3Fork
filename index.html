@@ -30,8 +30,26 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
+    let phantump = []
     function sumNumsFor(nums) {
-
+      let diglett = 0 
+for (let pichu = 0; pichu < nums.length; pichu ++) {
+if (nums[pichu] === 13) {
+    diglett = "I'm too superstitious!"
+    break
+}
+else if (nums[pichu] === undefined) {
+    diglett = 0
+    break
+}
+else if (typeof(nums[pichu]) === "string") {
+nums[pichu] = 0
+}
+else {
+    diglett += nums[pichu]
+}
+}
+return diglett
     }
 
     // 👉 CHALLENGE 2
@@ -41,7 +59,31 @@
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
-
+      let milotic = "" 
+for (let spinda = 0; spinda < str.length; spinda ++) {
+    let feebas = str[spinda]
+    let relicanth
+    if (feebas === "a") {
+    relicanth = ""
+    }
+    else if (feebas === "e") {
+    relicanth = ""
+    }
+   else if (feebas === "i") {
+    relicanth = ""
+    }
+   else if (feebas === "o") {
+    relicanth = ""
+    }
+   else if (feebas === "u") {
+    relicanth = ""
+    }
+    else {
+relicanth = feebas
+    }
+milotic += relicanth;
+}
+return milotic;
     }
 
     // 👉 CHALLENGE 3
@@ -49,8 +91,27 @@
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
-
+    function sumNumsWhile(nums) {
+      let plusle = 0
+let lotad = 0
+while (plusle < nums.length) {
+if (nums[plusle] === 13) {
+    lotad = "I'm too superstitious!"
+    break
+}
+else if (nums[plusle] === undefined) {
+    lotad = 0
+    break
+}
+else if (typeof(nums[plusle]) === "string") {
+    nums[plusle] = 0
+}
+else {
+    lotad += nums[plusle]
+}
+    plusle ++;
+}
+return lotad
     }
 
     // 👉 CHALLENGE 4
@@ -70,10 +131,17 @@
     // 🧠 There are many ways to solve this, but practice using a while loop.
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-    function fightMonsters() {
-
+    function fightMonsters(lifePoints) {
+      round = 1
+      while (lifePoints > 0) {
+    //console.log(lifePoints);
+    lifePoints -= round;
+    if (lifePoints <= 0) {
+      return `You died in round ${round}`
     }
-
+    round ++;
+    }
+  }
     // 👉 CHALLENGE 5
     // 🧠 The function findEvenNums takes an array of integers as its argument.
     // 🧠 It returns a new array containing the even numbers found in the original array, in the same order.
@@ -81,8 +149,14 @@
     // findEvenNums([0, 1, 2, 3, 4]) // should return [0, 2, 4]
     // ❗ Notes:
     // 🧠 Use any kind of loop you'd like and the push method to populate the array of even numbers.
-    function findEvenNums() {
-
+    function findEvenNums(torkal) {
+      let magmar = []
+for (let magby = 0; magby < torkal.length; magby ++) {
+  if (torkal[magby] % 2 === 0) {
+    magmar.push(torkal[magby])
+  }
+}
+return magmar
     }
 
     // 👉 CHALLENGE 6
@@ -92,8 +166,21 @@
     // 🧠 Ages in the subarrays should appear in the same order they appeared in the original array.
     // 🧠 Examples of usage:
     // separateAges([31, 12, 25, 65, 84, 20]) // should return [[12, 20], [31, 25, 65, 84]]
-    function separateAges() {
-
+    function separateAges(heracross) {
+      let weedle = []
+      let kakuna = []
+      let beedrill = []
+      for (let caterpie = 0; caterpie < heracross.length; caterpie ++) {
+        if (heracross[caterpie] < 21) {
+          weedle.push (heracross[caterpie])
+        }
+        else if (heracross[caterpie] >= 21) {
+          kakuna.push(heracross[caterpie])
+        }
+      }
+      beedrill.push(weedle);
+      beedrill.push(kakuna);
+      return beedrill
     }
 
     // 👉 CHALLENGE 7
@@ -103,8 +190,13 @@
     // 🧠 The "tail" prop contains an array holding the elements of the array after the first one.
     // 🧠 Examples of usage:
     // headAndTail([1, 2, 3]) // should return { head: 1, tail: [2, 3] }
-    function headAndTail() {
-
+    function headAndTail(ekans) {
+      let arbok = {}
+    let seviper = ekans.shift()
+      arbok.head = seviper
+    let zangoose = ekans
+arbok.tail = zangoose
+return arbok
     }
 
     // 👉 CHALLENGE 8
@@ -114,8 +206,24 @@
     // nestedLoops(['hello', 'goodbye']) // should return ['hEllO', 'gOOdbyE']
     // ❗ Notes:
     // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
-    function nestedLoops() {
-
+    function nestedLoops(tailow) {
+      let swellow = []
+      for (let pidgey in tailow) {
+        let starly = tailow[pidgey]
+        let farfetchd = ""
+        for (let pidgeotto in starly) {
+          let staraptor
+          let staravia = starly[pidgeotto]
+          if ((staravia === "a") || (staravia === "e") || (staravia === "i") || (staravia === "o") || (staravia === "u")) {
+            staraptor = staravia.toUpperCase()
+          } else {
+            staraptor = staravia
+          }
+          farfetchd += staraptor
+        }
+        swellow.push(farfetchd);
+      }
+      return swellow;
     }
 
     // 👉 CHALLENGE 9
@@ -129,7 +237,15 @@
     // 🧠 Practice using pop and slice.
     // 🧠 Note that pop modifies the original array in place and returns the "popped" element, whereas slice gives us a brand new array.
     function crazyTrimmer(arr) {
-
+      let turtwig
+      if (arr.length % 2 === 0) {
+        arr.pop()
+        turtwig = arr
+      }
+        else {
+        turtwig = arr.slice(1,-1)
+        }
+      return turtwig
     }
 
     // 🧪 TESTS, do not work below this line
